@@ -1,0 +1,23 @@
+[package]
+name = "token-ledger"
+version = "0.1.0"
+edition = "2021"
+description = "In-memory, smart-contract-style token ledger with an HTTP API"
+
+[lib]
+name = "token_ledger"
+path = "src/lib.rs"
+
+[[bin]]
+name = "ledger-api"
+path = "src/main.rs"
+
+[dependencies]
+axum = "0.6"
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "net"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[dev-dependencies]
+tower = { version = "0.4", features = ["util"] }
+hyper = "0.14"
